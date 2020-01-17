@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="MyMentor.App.Notifications.NotificationsViewModel"
+             mc:Ignorable="d"
+             x:Class="MyMentor.App.Notifications.Notifications">
+    <ContentPage.Content>
+        <Grid Padding="20,10,20,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--List of notifications for the logged in user-->
+            <Label Grid.Row="0" Text="Notifications" TextColor="Black" FontSize="24" FontAttributes="Bold"/>
+            <StackLayout IsVisible="{Binding DoNotificationsExist}" Grid.Row="1" Orientation="Vertical">
+                <ListView x:Name="ListOfNotifications" ItemsSource="{Binding NotificationsForUser}" RowHeight="75">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout HorizontalOptions="Start">
+                                        <Frame CornerRadius="25" 
+                                               HeightRequest="50"
+                                               WidthRequest="50"
+                                               HorizontalOptions="Center"
+                                               Padding="0"
+                                               IsClippedToBounds="True">
+                                            <Image Source="{Binding AvatarImage}" HorizontalOptions="Center" VerticalOptions="Center" />
+                                        </Frame>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                                            <Label Text="{Binding UserInfo.User.FullName}" FontSize="14" FontAttributes="Bold"/>
+                                            <Label Text="{Binding UserInfo.User.EducationLevel}"/>
+                                            <Label Text="{Binding UserInfo.User.University}" FontAttributes="Bold" TextColor="#4B0082"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                                            <Label Text="{Binding AcademicInterestsAsString}" TextColor="Black"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <Button Command="{Binding Source={RelativeSource AncestorType={x:Type local:NotificationsViewModel}}, Path=RespondCommand}"
+                                            CommandParameter="{Binding}"
+                                            ImageSource="ic_person_add_green_dark_24dp"
+                                            BackgroundColor="Transparent"
+                                            VerticalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <Label IsVisible="{Binding AreNotificationsEmpty}" Grid.Row="1" Text="You do not have any notifications."/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

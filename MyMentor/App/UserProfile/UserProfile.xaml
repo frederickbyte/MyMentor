@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MyMentor.App.UserProfile.UserProfile">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!--  profile image -->
+            <Image Grid.Row="0" HeightRequest="100" Margin="0, 20, 0, 0" HorizontalOptions="Center" Source="{Binding AvatarImage}" VerticalOptions="End" WidthRequest="100" />
+
+            <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="Center">
+                <Label Text="{Binding FullName}" TextColor="Black" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="{Binding Classification}"  FontAttributes="Bold" TextColor="Black"/>
+                    <Label Text=" - " />
+                    <Label Text="{Binding EducationLevel}" FontAttributes="Bold" TextColor="Black"/>
+                    <Label Text=" - " />
+                    <Label Text="{Binding University}" FontAttributes="Bold" TextColor="#4B0082"/>
+                </StackLayout>
+            </StackLayout>
+
+            <!--  User stats  -->
+            <Grid Grid.Row="2" Margin="0, 20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Column="0" Orientation="Vertical" HorizontalOptions="Center">
+                    <Label Text="{Binding AssociationCount}"  FontSize="13" FontAttributes="Bold" HorizontalOptions="Center"/>
+                    <Label IsVisible="{Binding IsStudent}" Text="Mentors" TextColor="Black" FontSize="14"/>
+                    <Label IsVisible="{Binding IsMentor}" Text="Students" TextColor="Black" FontSize="14"/>
+                </StackLayout>
+
+                <StackLayout Grid.Column="1" Orientation="Vertical" HorizontalOptions="Center">
+                    <Label Text="{Binding PostCount}" FontSize="13" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label Text="Posts" TextColor="Black" FontSize="14"/>
+                </StackLayout>
+
+                <StackLayout Grid.Column="2" Orientation="Vertical" HorizontalOptions="Center">
+                    <Label Text="{Binding TotalMatchesCount}" FontSize="13" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label Text="Total Matches" TextColor="Black" FontSize="14" />
+                </StackLayout>
+            </Grid>
+            <!--List of academic interests-->
+            <Frame Grid.Row="3" HasShadow="True" Margin="20, 0">
+                <StackLayout Orientation="Vertical" >
+                    <StackLayout Orientation="Horizontal">
+                        <Label FontSize="16" Text="My Interests" TextColor="Black" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        <Label Text="Add" TextColor="Black" FontSize="16" HorizontalOptions="End" VerticalOptions="Center"/>
+                        <ImageButton Source="ic_add_circle_lblue_18dp.png" BackgroundColor="White" Command="{Binding AddAcademicInterestCommand}" HorizontalOptions="End" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <ListView ItemsSource="{Binding AcademicInterests}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                            <Frame CornerRadius="25" 
+                                               HeightRequest="50"
+                                               WidthRequest="50"
+                                               HorizontalOptions="Center"
+                                               Padding="2"
+                                               IsClippedToBounds="True">
+                                                <Image Source="book_icon.png" 
+                                                   HorizontalOptions="Center" 
+                                                   VerticalOptions="Center" />
+                                            </Frame>
+                                            <Label HorizontalOptions="EndAndExpand" 
+                                               VerticalOptions="Center" 
+                                               Text="{Binding Name}" 
+                                               FontAttributes="Bold"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Frame>
+            <Button Grid.Row="4" 
+                    Command="{Binding UpdateProfileCommand}"
+                    Text="UPDATE MY PROFILE" 
+                    Margin="20, 10, 20, 10" 
+                    BackgroundColor="#4CAF50" 
+                    TextColor="White"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

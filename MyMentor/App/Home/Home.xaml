@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MyMentor.App.Home.Home">
+    <ContentPage.Content>
+        <Grid Padding="20,10,20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Source="mymentor_logo.png" HeightRequest="75" WidthRequest="75" />
+            <Label Grid.Row="1" HorizontalTextAlignment="Center" Text="Welcome To MyMentor!" FontSize="32" FontAttributes="Bold"/>
+            <Label IsVisible="{Binding IsStudent}" Grid.Row="2" Text="To get started, click below to share with us the subject you're most interested in." FontSize="14"/>
+            <Label IsVisible="{Binding IsStudent}" Grid.Row="3" Text="MyMentor will use this information to match you with other students and professors who share your interests." FontSize="14"/>
+            <Label IsVisible="{Binding IsMentor}" Grid.Row="2" Text="To get started, click below to share with us the subject you're most proficient in." FontSize="14"/>
+            <Label IsVisible="{Binding IsMentor}" Grid.Row="3" Text="MyMentor will use this information to match you with students who share your interests." FontSize="14"/>
+            <Picker IsVisible="{Binding IsStudent}"
+                    Grid.Row="4" 
+                    ItemsSource="{Binding AcademicInterestsForPicker}"
+                    SelectedItem="{Binding SelectedAcademicInterest}"
+                    ItemDisplayBinding="{Binding Name}"
+                    Title="What are you most interested in?"
+                    TextColor="Black">
+
+            </Picker>
+            <Picker IsVisible="{Binding IsMentor}"
+                    Grid.Row="4" 
+                    ItemsSource="{Binding AcademicInterestsForPicker}"
+                    SelectedItem="{Binding SelectedAcademicInterest}"
+                    ItemDisplayBinding="{Binding Name}"
+                    Title="What subject did you major in?"
+                    TextColor="Black">
+
+            </Picker>
+            <Button IsVisible="{Binding IsStudent}" Command="{Binding FindMentorsCommand}" Grid.Row="5" Text="FIND MENTORS" TextColor="White" BackgroundColor="#FF6495ED" />
+            <Image IsVisible="{Binding IsStudent}" Grid.Row="6" Source="mentor_cartoon.png" HorizontalOptions="Center" />
+            <Button IsVisible="{Binding IsMentor}" Command="{Binding FindStudentsCommand}" Grid.Row="5" Text="FIND STUDENTS" TextColor="White" BackgroundColor="#FF6495ED"/>
+            <Image IsVisible="{Binding IsMentor}" Grid.Row="6" Source="mentor_garden.png" HorizontalOptions="Center" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

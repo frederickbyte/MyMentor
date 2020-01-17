@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MyMentor.App.ConnectionProfile.ConnectionProfile">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!--  profile image -->
+            <Image Grid.Row="0" HeightRequest="100" Margin="0, 20, 0, 0" HorizontalOptions="Center" Source="{Binding AvatarImage}" VerticalOptions="End" WidthRequest="100" />
+
+            <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="Center">
+                <Label Text="{Binding FullName}" TextColor="Black" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="{Binding Classification}" TextColor="Black" FontSize="14" FontAttributes="Bold"/>
+                    <Label Text=" - " />
+                    <Label Text="{Binding EducationLevel}" TextColor="Black" FontSize="14" FontAttributes="Bold"/>
+                    <Label Text=" - " />
+                    <Label Text="{Binding University}" FontSize="14" FontAttributes="Bold" TextColor="#4B0082"/>
+                </StackLayout>
+            </StackLayout>
+            <Label Grid.Row="2" 
+                   FontSize="14"
+                   Text="Matched since: November, 2019"
+                   HorizontalOptions="Center"
+                   TextColor="Black"
+                   />
+            <Label IsVisible="{Binding IsCurrentUserStudent}"
+                    Grid.Row="3" 
+                   FontSize="14"
+                   Padding="20,5,20,5"
+                   Text="I currently teach Systems Programming, and am conducting research on various cybersecurity topics at LSU. The aim of my research is to enhance the productivity of programmers by giving them better tools and data."
+                   HorizontalOptions="Center"
+                   TextColor="Black"
+                   />
+            <Label IsVisible="{Binding IsCurrentUserMentor}"
+                    Grid.Row="3" 
+                   FontSize="14"
+                   Padding="20,5,20,5"
+                   Text="I currently am studying Computer Science at LSU with a focus on Web development. I hope to create apps that bring joy and comfort to users by making their lives easier."
+                   HorizontalOptions="Center"
+                   TextColor="Black"
+                   />
+            <!--List of academic interests-->
+            <Frame Grid.Row="4" HasShadow="True" Margin="20, 10">
+                <StackLayout Orientation="Vertical" >
+                    <StackLayout Orientation="Horizontal">
+                        <Label FontSize="16" Text="Academic Interests" TextColor="Black" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <ListView ItemsSource="{Binding AcademicInterests}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Fill">
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                                            <Frame CornerRadius="25" 
+                                               HeightRequest="50"
+                                               WidthRequest="50"
+                                               HorizontalOptions="Center"
+                                               Padding="2"
+                                               IsClippedToBounds="True">
+                                                <Image Source="book_icon.png" HorizontalOptions="Center" VerticalOptions="Center" Aspect="Fill"/>
+                                            </Frame>
+                                            <Label HorizontalOptions="EndAndExpand" 
+                                               VerticalOptions="Center" 
+                                               Text="{Binding Name}" 
+                                               FontAttributes="Bold"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

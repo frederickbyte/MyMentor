@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.BarSelectedItemColor="White"
+            xmlns:studenthomepage="clr-namespace:MyMentor.App.Home;assembly=MyMentor"
+            xmlns:connectionspage="clr-namespace:MyMentor.App.Connections;assembly=MyMentor"
+            xmlns:discoverpage="clr-namespace:MyMentor.App.Discover;assembly=MyMentor"
+            xmlns:userProfilepage="clr-namespace:MyMentor.App.UserProfile;assembly=MyMentor"
+            x:Class="MyMentor.App.Dashboard.Dashboard"
+            UnselectedTabColor="Black"
+            BarBackgroundColor="CornflowerBlue"
+            BarTextColor="White" >
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Command="{Binding DirectMessagesCommand}" IconImageSource="ic_message_white_24dp"/>
+        <ToolbarItem Command="{Binding ViewNotificationsCommand}" IconImageSource="ic_notifications_white_24dp"/>
+        <ToolbarItem Text="Logout" Clicked="OnLogoutButtonClicked" />
+    </TabbedPage.ToolbarItems>
+    <TabbedPage.Children>
+        <studenthomepage:Home Title="Home" BackgroundColor="White" IconImageSource="@drawable/ic_home_custom_18dp"/>
+        <connectionspage:Connections BackgroundColor="White" Title="Connections" IconImageSource="@drawable/ic_group_black_18dp"/>
+        <discoverpage:Discover Title="Discover" IconImageSource="@drawable/ic_language_black_18dp"/>
+        <userProfilepage:UserProfile Title="Profile" IconImageSource="@drawable/ic_face_black_18dp" />
+    </TabbedPage.Children>
+</TabbedPage>

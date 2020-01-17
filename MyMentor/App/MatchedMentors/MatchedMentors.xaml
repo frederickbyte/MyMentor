@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="MyMentor.App.MatchedMentors.MatchedMentorsViewModel"
+             mc:Ignorable="d"
+             Title="Your Matches"
+             x:Class="MyMentor.App.MatchedMentors.MatchedMentors">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!--SHOW MATCHES-->
+            <Label Grid.Row="0" Padding="10" HorizontalOptions="Start" Text="Here are a few people we think you'd love to meet" TextColor="Black" FontSize="18"/>
+            <Frame Grid.Row="1" Padding="20" HasShadow="True">
+                <StackLayout Orientation="Vertical">
+                    <ListView ItemsSource="{Binding Matches}" RowHeight="65">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                        <StackLayout HorizontalOptions="Start">
+                                            <Frame CornerRadius="25"
+                                       HeightRequest="50"
+                                       WidthRequest="50"
+                                       HorizontalOptions="Center"
+                                       Padding="0"
+                                       IsClippedToBounds="True">
+                                                <Image Source="{Binding AvatarImage}" HorizontalOptions="Center" VerticalOptions="Center" Aspect="Fill"/>
+                                            </Frame>
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                                                <Label Text="{Binding UserInfo.User.FullName}" FontSize="14" FontAttributes="Bold"/>
+                                                <!--<Label Text="{Binding UserInfo.User.EducationLevel}"/>-->
+                                                <Label Text="{Binding UserInfo.User.University}" FontAttributes="Bold" TextColor="#4B0082"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                                                <Label Text="{Binding AcademicInterestsAsString}" TextColor="Black"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <Button IsVisible="{Binding IsStudent}"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type local:MatchedMentorsViewModel}}, Path=AddConnectionCommand}"
+                                            CommandParameter="{Binding}"
+                                            ImageSource="ic_group_add_green_dark_24dp.png"
+                                            WidthRequest="40"
+                                            BackgroundColor="Transparent"
+                                            VerticalOptions="Center"/>
+                                        <Button Command="{Binding Source={RelativeSource AncestorType={x:Type local:MatchedMentorsViewModel}}, Path=ViewMentorProfileCommand}"
+                                            CommandParameter="{Binding}"
+                                            ImageSource="ic_face_custom_24dp.png"
+                                            BackgroundColor="Transparent"
+                                            WidthRequest="40"
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="End"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

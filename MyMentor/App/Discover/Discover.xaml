@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="MyMentor.App.Discover.DiscoverViewModel"
+             mc:Ignorable="d"
+             x:Class="MyMentor.App.Discover.Discover">
+    <ContentPage.Content>
+        <Grid Padding="20,10,20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--Posts by users matched with logged in user-->
+            <Label Grid.Row="0" Text="Events and Messages" TextColor="Black" FontSize="24" FontAttributes="Bold"/>
+            <BoxView Grid.Row="1" Color="Black" HeightRequest="1"/>
+            <StackLayout Grid.Row="2" Orientation="Vertical">
+                <ListView ItemsSource="{Binding CommunityEvents}" RowHeight="65">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                    <StackLayout HorizontalOptions="Start">
+                                        <Image Source="ic_event_note_custom_24dp.png"
+                                               HorizontalOptions="Center" 
+                                               VerticalOptions="Center"
+                                               BackgroundColor="Transparent"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                        <Label Text="{Binding Title}" FontSize="14" FontAttributes="Bold"/>
+                                        <Label Text="{Binding Description}" TextColor="Black"/>
+                                    </StackLayout>
+                                    <Button Command="{Binding Source={RelativeSource AncestorType={x:Type local:DiscoverViewModel}}, Path=ViewEventCommand}"
+                                                CommandParameter="{Binding}"
+                                                BackgroundColor="Transparent"
+                                                ImageSource="ic_more_vert_green_dark_24dp.png"
+                                                HorizontalOptions="End"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <!--Posts by the community (i.e. users not matched with logged in user )-->
+            <Label Grid.Row="3" Text="Community posts" TextColor="Black" FontSize="24" FontAttributes="Bold"/>
+            <BoxView Grid.Row="4" Color="Black" HeightRequest="1"/>
+            <ScrollView Grid.Row="5" Padding="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Frame Grid.Column="0" Grid.Row="0" BorderColor="Black" Padding="2" Margin="0" HeightRequest="75">
+                        <Image Source="stock_univ_1.jpg" Aspect="AspectFill" />
+                    </Frame>
+                    <Frame Grid.Column="0" Grid.Row="1" BorderColor="Black" Padding="2" Margin="0">
+                        <Image Source="stock_library_1.jpg" Aspect="AspectFill" HeightRequest="75" />
+                    </Frame>
+                    <Frame Grid.Column="0" Grid.Row="2" BorderColor="Black" Padding="2" Margin="0">
+                        <Image Source="group_study.jpg" Aspect="AspectFill" />
+                    </Frame>
+                    <Frame Grid.Column="0" Grid.Row="3" BorderColor="Black" Padding="2" Margin="0">
+                        <Image Source="student_coffee.jpg" Aspect="AspectFill"  />
+                    </Frame>
+                    <Frame Grid.Column="0" Grid.Row="4" BorderColor="Black" Padding="2" Margin="0">
+                        <Image Source="stock_univ_1.jpg" Aspect="AspectFill" />
+                    </Frame>
+                    <Frame Grid.Column="0" Grid.Row="5" BorderColor="Black" Padding="2" Margin="0">
+                        <Image Source="stock_univ_1.jpg" Aspect="AspectFill" />
+                    </Frame>
+                    <Frame Grid.Column="1" Grid.Row="0" BorderColor="Black" Padding="2" Margin="0">
+                        <Image Source="group_study.jpeg" Aspect="AspectFill"/>
+                    </Frame>
+                    <Frame Grid.Column="1" Grid.Row="1" BorderColor="Black" Padding="2" Margin="0">
+                        <Image Source="student_coffee.jpeg" Aspect="AspectFill"/>
+                    </Frame>
+                    <Frame Grid.Column="1" Grid.Row="2" BorderColor="Black" Padding="2" Margin="0">
+                        <Image Source="stock_univ_1.jpeg" Aspect="AspectFill" />
+                    </Frame>
+                    <Frame Grid.Column="1" Grid.Row="3" BorderColor="Black" Padding="2" Margin="0">
+                        <Image Source="stock_library_1.jpeg" Aspect="AspectFill" />
+                    </Frame>
+                    <Frame Grid.Column="1" Grid.Row="4" BorderColor="Black" Padding="2" Margin="0">
+                        <Image Source="group_study.jpeg" Aspect="AspectFill"/>
+                    </Frame>
+                    <Frame Grid.Column="1" Grid.Row="5" BorderColor="Black" Padding="2" Margin="0">
+                        <Image Source="student_coffee.jpeg" Aspect="AspectFill"/>
+                    </Frame>
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

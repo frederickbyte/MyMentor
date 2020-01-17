@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MyMentor.App.DirectMessages.OutgoingViewCell">
+    <StackLayout Orientation="Vertical" Padding="10" Margin="80,10,10,10">
+        <Label Text="{Binding LastUpdateTime, StringFormat='{0:MMMM dd, yyyy}'}" FontSize="11" TextColor="Black"/>
+        <Frame BackgroundColor="Gray"
+               HasShadow="false">
+        <Label Text="{Binding Message}" TextColor="White"/>
+    </Frame>
+        </StackLayout>
+</ViewCell>
