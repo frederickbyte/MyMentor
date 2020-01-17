@@ -1,0 +1,401 @@
+2019-11-29T22:22:09.9382138-06:00  [ERR] Failed executing DbCommand ("86"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AcademicInterest] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (627a98df)
+2019-11-29T22:22:10.0706847-06:00  [ERR] An exception occurred while iterating over the results of a query for context type '"MyMentor.DataAccessLayer.ApplicationDbContext"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AcademicInterest'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:07f19aca-0d6f-47b7-bdd7-50a21bfaf960
+Error Number:208,State:1,Class:16" (f5c7ac34)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AcademicInterest'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:07f19aca-0d6f-47b7-bdd7-50a21bfaf960
+Error Number:208,State:1,Class:16
+2019-11-29T22:22:10.2622323-06:00  [FTL] Error whilst creating and seeding database (944fb156)
+System.AggregateException: One or more errors occurred. (Invalid object name 'AcademicInterest'.)
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AcademicInterest'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at MyMentor.DataAccessLayer.Repository.Database.DatabaseInitializer.SeedAsync() in C:\Development\MyMentor-DataServices\MyMentor.DataAccessLayer\Repository\Database\DatabaseInitializer.cs:line 41
+ClientConnectionId:07f19aca-0d6f-47b7-bdd7-50a21bfaf960
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at MyMentor.API.Program.Main(String[] args) in C:\Development\MyMentor-DataServices\MyMentor.API\Program.cs:line 41
+2019-11-29T22:31:13.3808210-06:00  [ERR] Failed executing DbCommand ("97"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AcademicInterest] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (627a98df)
+2019-11-29T22:31:13.4590847-06:00  [ERR] An exception occurred while iterating over the results of a query for context type '"MyMentor.DataAccessLayer.ApplicationDbContext"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AcademicInterest'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ffc5f0dd-2c6b-43aa-9b27-561c229c9582
+Error Number:208,State:1,Class:16" (f5c7ac34)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AcademicInterest'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ffc5f0dd-2c6b-43aa-9b27-561c229c9582
+Error Number:208,State:1,Class:16
+2019-11-29T22:31:13.6235009-06:00  [FTL] Error whilst creating and seeding database (944fb156)
+System.AggregateException: One or more errors occurred. (Invalid object name 'AcademicInterest'.)
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AcademicInterest'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at MyMentor.DataAccessLayer.Repository.Database.DatabaseInitializer.SeedAsync() in C:\Development\MyMentor-DataServices\MyMentor.DataAccessLayer\Repository\Database\DatabaseInitializer.cs:line 41
+ClientConnectionId:ffc5f0dd-2c6b-43aa-9b27-561c229c9582
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at MyMentor.API.Program.Main(String[] args) in C:\Development\MyMentor-DataServices\MyMentor.API\Program.cs:line 41
+2019-11-29T22:32:51.6649550-06:00  [ERR] Failed executing DbCommand ("79"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AcademicInterest] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (627a98df)
+2019-11-29T22:32:51.7459285-06:00  [ERR] An exception occurred while iterating over the results of a query for context type '"MyMentor.DataAccessLayer.ApplicationDbContext"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AcademicInterest'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:495de4d7-f2b9-48a6-bac1-d6f190c38f7b
+Error Number:208,State:1,Class:16" (f5c7ac34)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AcademicInterest'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:495de4d7-f2b9-48a6-bac1-d6f190c38f7b
+Error Number:208,State:1,Class:16
+2019-11-29T22:32:51.9083463-06:00  [FTL] Error whilst creating and seeding database (944fb156)
+System.AggregateException: One or more errors occurred. (Invalid object name 'AcademicInterest'.)
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AcademicInterest'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at MyMentor.DataAccessLayer.Repository.Database.DatabaseInitializer.SeedAsync() in C:\Development\MyMentor-DataServices\MyMentor.DataAccessLayer\Repository\Database\DatabaseInitializer.cs:line 41
+ClientConnectionId:495de4d7-f2b9-48a6-bac1-d6f190c38f7b
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at MyMentor.API.Program.Main(String[] args) in C:\Development\MyMentor-DataServices\MyMentor.API\Program.cs:line 41
+2019-11-29T22:33:27.7134504-06:00  [ERR] Failed executing DbCommand ("81"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AcademicInterest] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (627a98df)
+2019-11-29T22:33:27.8260534-06:00  [ERR] An exception occurred while iterating over the results of a query for context type '"MyMentor.DataAccessLayer.ApplicationDbContext"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AcademicInterest'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:579a404f-38c4-48f5-abbf-974ef4ecc5f5
+Error Number:208,State:1,Class:16" (f5c7ac34)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AcademicInterest'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:579a404f-38c4-48f5-abbf-974ef4ecc5f5
+Error Number:208,State:1,Class:16
+2019-11-29T22:37:03.9995225-06:00  [ERR] Failed executing DbCommand ("128"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AcademicInterest] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END" (627a98df)
+2019-11-29T22:37:04.0813428-06:00  [ERR] An exception occurred while iterating over the results of a query for context type '"MyMentor.DataAccessLayer.ApplicationDbContext"'."
+""Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AcademicInterest'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:a77f45fc-3619-41de-8247-2322582131b8
+Error Number:208,State:1,Class:16" (f5c7ac34)
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AcademicInterest'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:a77f45fc-3619-41de-8247-2322582131b8
+Error Number:208,State:1,Class:16
+2019-11-29T22:37:04.2481572-06:00  [FTL] Error whilst creating and seeding database (944fb156)
+System.AggregateException: One or more errors occurred. (Invalid object name 'AcademicInterest'.)
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'AcademicInterest'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.RelationalShapedQueryCompilingExpressionVisitor.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at MyMentor.DataAccessLayer.Repository.Database.DatabaseInitializer.SeedAsync() in C:\Development\MyMentor-DataServices\MyMentor.DataAccessLayer\Repository\Database\DatabaseInitializer.cs:line 41
+ClientConnectionId:a77f45fc-3619-41de-8247-2322582131b8
+Error Number:208,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at MyMentor.API.Program.Main(String[] args) in C:\Development\MyMentor-DataServices\MyMentor.API\Program.cs:line 41
+2019-11-29T22:41:13.6431159-06:00  [ERR] Failed executing DbCommand ("75"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [Description] nvarchar(max) NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [UpdatedBy] nvarchar(max) NULL,
+    [CreatedDate] datetime2 NOT NULL,
+    [UpdatedDate] datetime2 NOT NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);" (627a98df)
+2019-11-29T22:41:49.4684161-06:00  [ERR] Failed executing DbCommand ("75"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [Description] nvarchar(max) NULL,
+    [CreatedBy] nvarchar(max) NULL,
+    [UpdatedBy] nvarchar(max) NULL,
+    [CreatedDate] datetime2 NOT NULL,
+    [UpdatedDate] datetime2 NOT NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);" (627a98df)
+2019-11-29T22:41:49.7110768-06:00  [FTL] Error whilst creating and seeding database (944fb156)
+System.AggregateException: One or more errors occurred. (There is already an object named 'AspNetRoles' in the database.)
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): There is already an object named 'AspNetRoles' in the database.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteNonQueryAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteNonQueryAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteNonQueryAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.MigrationCommandExecutor.ExecuteNonQueryAsync(IEnumerable`1 migrationCommands, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.MigrationCommandExecutor.ExecuteNonQueryAsync(IEnumerable`1 migrationCommands, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.MigrationCommandExecutor.ExecuteNonQueryAsync(IEnumerable`1 migrationCommands, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.MigrationCommandExecutor.ExecuteNonQueryAsync(IEnumerable`1 migrationCommands, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator.MigrateAsync(String targetMigration, CancellationToken cancellationToken)
+   at MyMentor.DataAccessLayer.Repository.Database.DatabaseInitializer.SeedAsync() in C:\Development\MyMentor-DataServices\MyMentor.DataAccessLayer\Repository\Database\DatabaseInitializer.cs:line 38
+ClientConnectionId:d324d0cf-df28-4511-aa68-5fd218997cbe
+Error Number:2714,State:6,Class:16
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at MyMentor.API.Program.Main(String[] args) in C:\Development\MyMentor-DataServices\MyMentor.API\Program.cs:line 41
+2019-11-29T22:43:06.4801258-06:00  [WRN] User "BE4331F5-A2F9-4983-B806-BB5FB5F0E3C7" password validation failed: "PasswordRequiresNonAlphanumeric;PasswordRequiresDigit;PasswordRequiresUpper". (2f223212)
+2019-11-29T22:43:06.7438004-06:00  [FTL] Error whilst creating and seeding database (944fb156)
+System.AggregateException: One or more errors occurred. (Seeding "dboudreaux" user failed. Errors: Passwords must have at least one non alphanumeric character.
+Passwords must have at least one digit ('0'-'9').
+Passwords must have at least one uppercase ('A'-'Z').)
+ ---> System.Exception: Seeding "dboudreaux" user failed. Errors: Passwords must have at least one non alphanumeric character.
+Passwords must have at least one digit ('0'-'9').
+Passwords must have at least one uppercase ('A'-'Z').
+   at MyMentor.DataAccessLayer.Repository.Database.DatabaseInitializer.CreateUserAsync(String id, String userName, String password, String fullName, String email, String phoneNumber, String[] roles) in C:\Development\MyMentor-DataServices\MyMentor.DataAccessLayer\Repository\Database\DatabaseInitializer.cs:line 281
+   at MyMentor.DataAccessLayer.Repository.Database.DatabaseInitializer.SeedAsync() in C:\Development\MyMentor-DataServices\MyMentor.DataAccessLayer\Repository\Database\DatabaseInitializer.cs:line 79
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at MyMentor.API.Program.Main(String[] args) in C:\Development\MyMentor-DataServices\MyMentor.API\Program.cs:line 41
+2019-11-29T23:33:59.9489479-06:00 0HLRLARHUCHD5:00000001 [ERR] Failed executing DbCommand ("122"ms) [Parameters=["@__userName_0='?' (Size = 256), @__password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t0].[Id], [t0].[AccessFailedCount], [t0].[ConcurrencyStamp], [t0].[Configuration], [t0].[CreatedBy], [t0].[CreatedDate], [t0].[Email], [t0].[EmailConfirmed], [t0].[FullName], [t0].[IsEnabled], [t0].[JobTitle], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TeacherId], [t0].[TwoFactorEnabled], [t0].[UpdatedBy], [t0].[UpdatedDate], [t0].[UserName], [t0].[Id0], [t0].[CreatedBy0], [t0].[CreatedDate0], [t0].[DegreeId], [t0].[DegreeLevel], [t0].[University], [t0].[UpdatedBy0], [t0].[UpdatedDate0], [t0].[UserId], [t0].[Id1], [t0].[CreatedBy1], [t0].[CreatedDate1], [t0].[Name], [t0].[UpdatedBy1], [t0].[UpdatedDate1], [t0].[Id2], [t0].[CreatedBy2], [t0].[CreatedDate2], [t0].[Grade], [t0].[MajorId], [t0].[University0], [t0].[UpdatedBy2], [t0].[UpdatedDate2], [t0].[UserId0], [t0].[Id3], [t0].[CreatedBy3], [t0].[CreatedDate3], [t0].[Name0], [t0].[UpdatedBy3], [t0].[UpdatedDate3], [t1].[Id], [t1].[AcademicInterestId], [t1].[CreatedBy], [t1].[CreatedDate], [t1].[UpdatedBy], [t1].[UpdatedDate], [t1].[UserId], [t1].[Id0], [t1].[CreatedBy0], [t1].[CreatedDate0], [t1].[Name], [t1].[UpdatedBy0], [t1].[UpdatedDate0]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Configuration], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsEnabled], [a].[JobTitle], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TeacherId], [a].[TwoFactorEnabled], [a].[UpdatedBy], [a].[UpdatedDate], [a].[UserName], [t].[Id] AS [Id0], [t].[CreatedBy] AS [CreatedBy0], [t].[CreatedDate] AS [CreatedDate0], [t].[DegreeId], [t].[DegreeLevel], [t].[University], [t].[UpdatedBy] AS [UpdatedBy0], [t].[UpdatedDate] AS [UpdatedDate0], [t].[UserId], [a0].[Id] AS [Id1], [a0].[CreatedBy] AS [CreatedBy1], [a0].[CreatedDate] AS [CreatedDate1], [a0].[Name], [a0].[UpdatedBy] AS [UpdatedBy1], [a0].[UpdatedDate] AS [UpdatedDate1], [s].[Id] AS [Id2], [s].[CreatedBy] AS [CreatedBy2], [s].[CreatedDate] AS [CreatedDate2], [s].[Grade], [s].[MajorId], [s].[University] AS [University0], [s].[UpdatedBy] AS [UpdatedBy2], [s].[UpdatedDate] AS [UpdatedDate2], [s].[UserId] AS [UserId0], [a1].[Id] AS [Id3], [a1].[CreatedBy] AS [CreatedBy3], [a1].[CreatedDate] AS [CreatedDate3], [a1].[Name] AS [Name0], [a1].[UpdatedBy] AS [UpdatedBy3], [a1].[UpdatedDate] AS [UpdatedDate3]
+    FROM [AspNetUsers] AS [a]
+    LEFT JOIN [Teacher] AS [t] ON [a].[TeacherId] = [t].[Id]
+    LEFT JOIN [AcademicInterest] AS [a0] ON [t].[DegreeId] = [a0].[Id]
+    LEFT JOIN [Student] AS [s] ON [a].[Id] = [s].[UserId]
+    LEFT JOIN [AcademicInterest] AS [a1] ON [s].[MajorId] = [a1].[Id]
+    WHERE ((([a].[UserName] = @__userName_0) AND ([a].[UserName] IS NOT NULL AND @__userName_0 IS NOT NULL)) OR ([a].[UserName] IS NULL AND @__userName_0 IS NULL)) AND ((([a].[PasswordHash] = @__password_1) AND ([a].[PasswordHash] IS NOT NULL AND @__password_1 IS NOT NULL)) OR ([a].[PasswordHash] IS NULL AND @__password_1 IS NULL))
+) AS [t0]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[AcademicInterestId], [u].[CreatedBy], [u].[CreatedDate], [u].[UpdatedBy], [u].[UpdatedDate], [u].[UserId], [a2].[Id] AS [Id0], [a2].[CreatedBy] AS [CreatedBy0], [a2].[CreatedDate] AS [CreatedDate0], [a2].[Name], [a2].[UpdatedBy] AS [UpdatedBy0], [a2].[UpdatedDate] AS [UpdatedDate0]
+    FROM [UserInterest] AS [u]
+    INNER JOIN [AcademicInterest] AS [a2] ON [u].[AcademicInterestId] = [a2].[Id]
+) AS [t1] ON [t0].[Id] = [t1].[UserId]
+ORDER BY [t0].[Id], [t1].[Id], [t1].[Id0]" (627a98df)
+2019-11-29T23:40:49.7887964-06:00 0HLRLAVBNT80E:00000001 [ERR] Failed executing DbCommand ("116"ms) [Parameters=["@__userName_0='?' (Size = 256), @__password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t0].[Id], [t0].[AccessFailedCount], [t0].[ConcurrencyStamp], [t0].[Configuration], [t0].[CreatedBy], [t0].[CreatedDate], [t0].[Email], [t0].[EmailConfirmed], [t0].[FullName], [t0].[IsEnabled], [t0].[JobTitle], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UpdatedBy], [t0].[UpdatedDate], [t0].[UserId], [t0].[UserName], [t0].[Id0], [t0].[CreatedBy0], [t0].[CreatedDate0], [t0].[DegreeId], [t0].[DegreeLevel], [t0].[University], [t0].[UpdatedBy0], [t0].[UpdatedDate0], [t0].[UserId0], [t0].[Id1], [t0].[CreatedBy1], [t0].[CreatedDate1], [t0].[Name], [t0].[UpdatedBy1], [t0].[UpdatedDate1], [t0].[Id2], [t0].[CreatedBy2], [t0].[CreatedDate2], [t0].[Grade], [t0].[MajorId], [t0].[University0], [t0].[UpdatedBy2], [t0].[UpdatedDate2], [t0].[UserId1], [t0].[Id3], [t0].[CreatedBy3], [t0].[CreatedDate3], [t0].[Name0], [t0].[UpdatedBy3], [t0].[UpdatedDate3], [t1].[Id], [t1].[AcademicInterestId], [t1].[CreatedBy], [t1].[CreatedDate], [t1].[UpdatedBy], [t1].[UpdatedDate], [t1].[UserId], [t1].[Id0], [t1].[CreatedBy0], [t1].[CreatedDate0], [t1].[Name], [t1].[UpdatedBy0], [t1].[UpdatedDate0]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Configuration], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsEnabled], [a].[JobTitle], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UpdatedBy], [a].[UpdatedDate], [a].[UserId], [a].[UserName], [t].[Id] AS [Id0], [t].[CreatedBy] AS [CreatedBy0], [t].[CreatedDate] AS [CreatedDate0], [t].[DegreeId], [t].[DegreeLevel], [t].[University], [t].[UpdatedBy] AS [UpdatedBy0], [t].[UpdatedDate] AS [UpdatedDate0], [t].[UserId] AS [UserId0], [a0].[Id] AS [Id1], [a0].[CreatedBy] AS [CreatedBy1], [a0].[CreatedDate] AS [CreatedDate1], [a0].[Name], [a0].[UpdatedBy] AS [UpdatedBy1], [a0].[UpdatedDate] AS [UpdatedDate1], [s].[Id] AS [Id2], [s].[CreatedBy] AS [CreatedBy2], [s].[CreatedDate] AS [CreatedDate2], [s].[Grade], [s].[MajorId], [s].[University] AS [University0], [s].[UpdatedBy] AS [UpdatedBy2], [s].[UpdatedDate] AS [UpdatedDate2], [s].[UserId] AS [UserId1], [a1].[Id] AS [Id3], [a1].[CreatedBy] AS [CreatedBy3], [a1].[CreatedDate] AS [CreatedDate3], [a1].[Name] AS [Name0], [a1].[UpdatedBy] AS [UpdatedBy3], [a1].[UpdatedDate] AS [UpdatedDate3]
+    FROM [AspNetUsers] AS [a]
+    LEFT JOIN [Teacher] AS [t] ON [a].[UserId] = [t].[Id]
+    LEFT JOIN [AcademicInterest] AS [a0] ON [t].[DegreeId] = [a0].[Id]
+    LEFT JOIN [Student] AS [s] ON [a].[UserId] = [s].[Id]
+    LEFT JOIN [AcademicInterest] AS [a1] ON [s].[MajorId] = [a1].[Id]
+    WHERE ((([a].[UserName] = @__userName_0) AND ([a].[UserName] IS NOT NULL AND @__userName_0 IS NOT NULL)) OR ([a].[UserName] IS NULL AND @__userName_0 IS NULL)) AND ((([a].[PasswordHash] = @__password_1) AND ([a].[PasswordHash] IS NOT NULL AND @__password_1 IS NOT NULL)) OR ([a].[PasswordHash] IS NULL AND @__password_1 IS NULL))
+) AS [t0]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[AcademicInterestId], [u].[CreatedBy], [u].[CreatedDate], [u].[UpdatedBy], [u].[UpdatedDate], [u].[UserId], [a2].[Id] AS [Id0], [a2].[CreatedBy] AS [CreatedBy0], [a2].[CreatedDate] AS [CreatedDate0], [a2].[Name], [a2].[UpdatedBy] AS [UpdatedBy0], [a2].[UpdatedDate] AS [UpdatedDate0]
+    FROM [UserInterest] AS [u]
+    INNER JOIN [AcademicInterest] AS [a2] ON [u].[AcademicInterestId] = [a2].[Id]
+) AS [t1] ON [t0].[Id] = [t1].[UserId]
+ORDER BY [t0].[Id], [t1].[Id], [t1].[Id0]" (627a98df)
+2019-11-29T23:59:47.0557497-06:00 0HLRLB9UE9UG3:00000001 [ERR] Failed executing DbCommand ("125"ms) [Parameters=["@__userName_0='?' (Size = 256), @__password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Configuration], [t].[CreatedBy], [t].[CreatedDate], [t].[Email], [t].[EmailConfirmed], [t].[FullName], [t].[IsEnabled], [t].[JobTitle], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TeacherId], [t].[TwoFactorEnabled], [t].[UpdatedBy], [t].[UpdatedDate], [t].[UserName], [t0].[Id], [t0].[AcademicInterestId], [t0].[CreatedBy], [t0].[CreatedDate], [t0].[UpdatedBy], [t0].[UpdatedDate], [t0].[UserId], [t0].[Id0], [t0].[CreatedBy0], [t0].[CreatedDate0], [t0].[Name], [t0].[UpdatedBy0], [t0].[UpdatedDate0]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Configuration], [a].[CreatedBy], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[IsEnabled], [a].[JobTitle], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TeacherId], [a].[TwoFactorEnabled], [a].[UpdatedBy], [a].[UpdatedDate], [a].[UserName]
+    FROM [AspNetUsers] AS [a]
+    WHERE ((([a].[UserName] = @__userName_0) AND ([a].[UserName] IS NOT NULL AND @__userName_0 IS NOT NULL)) OR ([a].[UserName] IS NULL AND @__userName_0 IS NULL)) AND ((([a].[PasswordHash] = @__password_1) AND ([a].[PasswordHash] IS NOT NULL AND @__password_1 IS NOT NULL)) OR ([a].[PasswordHash] IS NULL AND @__password_1 IS NULL))
+) AS [t]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[AcademicInterestId], [u].[CreatedBy], [u].[CreatedDate], [u].[UpdatedBy], [u].[UpdatedDate], [u].[UserId], [a0].[Id] AS [Id0], [a0].[CreatedBy] AS [CreatedBy0], [a0].[CreatedDate] AS [CreatedDate0], [a0].[Name], [a0].[UpdatedBy] AS [UpdatedBy0], [a0].[UpdatedDate] AS [UpdatedDate0]
+    FROM [UserInterest] AS [u]
+    INNER JOIN [AcademicInterest] AS [a0] ON [u].[AcademicInterestId] = [a0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[Id], [t0].[Id0]" (627a98df)
